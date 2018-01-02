@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <style>
+        .msgbox{
+            width:500px;
+            height:300px;
+            border:1px solid #ccc;
+            position: fixed;
+            left: 0;
+            right:0;
+            left:0;
+            right:0;
+            margin:auto;
+            line-height: 50px;
+        }
+        .table{
+            width:50%;
+        }
+        .container{
+            height:300px;
+            position: fixed;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+   <div class="row">
+       <table class="table table-bordered col-sm-offset-3">
+           <tr class="success">
+               <th>
+                   <h1 class="text-center">信息提示界面</h1>
+               </th>
+           </tr>
+           <tr class="text-center">
+               <td>
+                   <h3><span><?php echo $msg;?></span>,本页面会在 <b>3</b>秒后跳转，直接跳转请 <a href="<?php echo $href;?>">点击</a></h3>
+               </td>
+           </tr>
+       </table>
+   </div>
+</div>
+</body>
+<script>
+    var time=document.querySelector("b");
+    var link=document.querySelector("a");
+    var num=3;
+    setInterval(function(){
+        num--;
+        time.innerHTML=num;
+            if(num===0){
+                location.href=link.href;
+            }
+    },1000)
+</script>
+</html>
